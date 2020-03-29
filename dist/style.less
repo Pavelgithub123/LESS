@@ -1,8 +1,100 @@
-@width: 1000px;
-@b-color: green;
+@width             : 1280px;
+@p-color           : red;
+@p-widht           : (@width)+3;
+@header-title-color: black;
+@btn-width         : 100px;
+@btn-heigth        : (@btn-width)/3;
+@btn-backgraund    : grey;
+@border-stroke     : 1px sold black;
+@color-link        : grey;
+
 header {
-    @width:1300px;
-    height: 300px;
-    border: 1px solid black;
-    background-color: @b-color;
+    @width          : 1200px;
+    width           : @width;
+    background-color: dimgrey;
+}
+
+h1 {
+    @width          : 1200px;
+    width           : @width;
+    background-color: dimgrey;
+    border          : @border-stroke;
+    color           : black;
+    display         : block;
+    text-align      : center;
+}
+
+main {
+    width: @width;
+}
+
+ul {
+    text-decoration: none;
+    color          : red;
+
+    li {
+        text-decoration: none;
+        color          : black;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.header {
+    width           : @width;
+    background-color: @p-color;
+
+    &-title {
+        color: @header-title-color;
+    }
+
+    &-list {
+        list-style-type: none;
+    }
+}
+
+button {
+    text-decoration: @color-link;
+    width: @btn-width;
+    height: @btn-heigth;    
+    border: @border-stroke;
+
+    &:hover {
+        background-color: lighten(@color-link, 30);
+    }
+
+    &:active {
+        background-color: darken(@color-link, 30);
+    }
+}
+
+.txt() {
+    font-family: Arial;
+    font-size  : 14px;
+    font-weight: normal;
+}
+
+p {
+    width: @width/4;
+    .txt();
+}
+
+a {
+    text-decoration: none;
+    .txt;
+}
+
+.txt(@family, @size, @weight) {
+    font-family: @family;
+    font-size  : @size;
+    font-weight: @weight;
+}
+
+.p-header {
+    width: @width/2;
+    .txt(Verdana, 15px, bold);
+    color: black;
+    
 }
